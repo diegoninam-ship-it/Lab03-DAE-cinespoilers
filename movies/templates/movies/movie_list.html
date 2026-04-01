@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+</head>
+<body>
+    <h1>Lista de Películas</h1>
+
+    {% for movie in movies %}
+        <div>
+            <h3>{{ movie.title }}</h3>
+            <p>{{ movie.description }}</p>
+            <small>{{ movie.release_date }}</small>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No hay películas registradas.</p>
+    {% endfor %}
+</body>
+</html>
