@@ -1,16 +1,28 @@
 # Diego Nina Malqui
+# Aplicación de API REST (Django REST Framework)
 
-## Creación del repositorio
-![Creación de repositorio](./docs/cap1-repository.png)
+## Demostración de la API
+![APIRest](./docs/APIRest.png)
 
-## Preparación del ambiente
-![Preparación del ambiente](./docs/cap2-enviroment.png)
+# Lista de Movies
+![Movie-List](./docs/Movie-List.png)
 
-## Levantamiento del ambiente
-![Levantamiento del ambiente](./docs/cap3-server.png)
+## Test-GET http://127.0.0.1:8000/api/movies/
+![Test-GET](./docs/test-GET.png)
+![Test-GET](./docs/BD-GET.png)
 
-## Levantamiento de ADMIN
-![Levantamiento de ADMIN](./docs/cap4-admin.png)
+## Test-POST http://127.0.0.1:8000/api/movies/
+![Test-POST](./docs/test-POST.png)
+![Test-POST](./docs/BD-POST.png)
 
-## Frontend de movies con peliculas
-![Levantamiento de ADMIN](./docs/cap5-frontmovies.png)
+## Test-PUT http://127.0.0.1:8000/api/movies/2/
+![Test-PUT](./docs/test-PUT.png)
+![Test-POST](./docs/BD-PUT.png)
+
+## Test-DELETE http://127.0.0.1:8000/api/movies/2/
+![Test-DELETE](./docs/test-DELETE.png)
+![Test-POST](./docs/BD-DELETE.png)
+
+## Test-PATCH http://127.0.0.1:8000/api/movies/1/
+![Test-PATCH](./docs/test-PATCH.png)
+![Test-PATCH](./docs/BD-PATCH.png)
