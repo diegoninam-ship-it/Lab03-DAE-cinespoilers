@@ -41,6 +41,7 @@
 
 ---
 
+## Movies
 ### GET Películas Activas
 `GET http://127.0.0.1:8000/api/movies/active/`
 ![Movies Active](./docs/movies-active.png)
@@ -59,6 +60,7 @@
 
 ---
 
+## Genero
 ### GET Buscar Género por ID
 `GET http://127.0.0.1:8000/api/genres/buscar-por-id/1/`
 ![Genre By ID](./docs/genre-by-id.png)
