@@ -8,6 +8,47 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
+    @action(detail=False, methods=['get'], url_path='search')
+    def search_by_name(self, request):
+        """
+        Buscar películas por nombre (parcial)
+        Ej: /api/movies/search/?name=incep
+        """
+        name = request.query_params.get('name', '')
+        movies = Movie.objects.filter(title__icontains=name)
+        serializer = self.get_serializer(movies, many=True)
+        return Response(serializer.data)
+
+    # NUEVO
+    @action(detail=False, methods=['get'], url_path='active')
+    def get_active_movies(self, request):
+        """
+        Obtener solo películas activas
+        Ej: /api/movies/active/
+        """
+        movies = Movie.objects.filter(is_active=True)
+        serializer = self.get_serializer(movies, many=True)
+        return Response(serializer.data)
+
+    # NUEVO
+    @action(detail=False, methods=['get'], url_path='by-genre')
+    def get_by_genre(self, request):
+        """
+        Filtrar películas por género
+        Ej: /api/movies/by-genre/?genre_id=1
+        """
+        genre_id = request.query_params.get('genre_id')
+
+        if not genre_id:
+            return Response(
+                {"error": "Debe proporcionar genre_id"},
+                status=400
+            )
+
+        movies = Movie.objects.filter(genres__id=genre_id)
+        serializer = self.get_serializer(movies, many=True)
+        return Response(serializer.data)
+
 class GenreViewSet(viewsets.ModelViewSet):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
